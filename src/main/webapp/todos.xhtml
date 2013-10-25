@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+<title>Home</title>
+</head>
+<body>
+
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="../" class="navbar-brand">CloudUnit</a>
+				<!-- 				<button class="navbar-toggle" type="button" data-toggle="collapse" -->
+				<!-- 					data-target="#navbar-main"> -->
+				<!-- 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span -->
+				<!-- 						class="icon-bar"></span> -->
+				<!-- 				</button> -->
+			</div>
+
+		</div>
+	</div>
+
+	<div></div>
+
+	<div class="page-header" id="banner">
+		<div class="col-lg-6">
+			<h1>CloudUnit Template with Spring MVC / JPA</h1>
+		</div>
+	</div>
+
+	<div></div>
+	<div class="col-lg-8">
+		<div class="page-header">
+			<h2 id="tables">Create a new Entity</h2>
+		</div>
+		<div class="col-lg-4">
+
+
+			<h:form>
+
+				<table>
+
+					<tr>
+						<td>Name :</td>
+						<td><h:inputText value="#{toDoController.toDo.name}" /></td>
+					</tr>
+
+					<tr>
+						<td>Date :</td>
+						<td><h:inputText value="#{toDoController.toDo.date}">
+								<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Europe/Paris" />
+							</h:inputText></td>
+					</tr>
+					<tr>
+						<td><h:commandButton value="Submit"
+								action="#{toDoController.save()}" /></td>
+
+						<td><button type="button" class="btn btn-info">Help</button></td>
+					</tr>
+
+				</table>
+
+				<h:dataTable value="#{toDoController.toDos}" var="entity">
+					<h:column>
+						<f:facet name="header">Name</f:facet>
+				#{entity.name}
+				</h:column>
+					<h:column>
+						<f:facet name="header">Date</f:facet>
+				#{entity.date}
+				</h:column>
+
+					<h:column>
+						<f:facet name="header">Delete</f:facet>
+						<h:commandButton value="Delete"
+							action="#{toDoController.delete()}" />
+					</h:column>
+
+				</h:dataTable>
+			</h:form>
+		</div>
+	</div>
+</body>
+</html>
