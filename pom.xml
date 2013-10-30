@@ -10,12 +10,13 @@
 	<properties>
 		<java.version>1.7</java.version>
 		<maven.compiler.plugin>3.1</maven.compiler.plugin>
-		<spring.version>3.2.4.RELEASE</spring.version>
-		<spring.data.version>1.4.2.RELEASE</spring.data.version>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.data.version>1.0.3.RELEASE</spring.data.version>
 		<jstl.version>1.2</jstl.version>
 		<hibernate.version>4.2.6.Final</hibernate.version>
 		<mysql.connector.version>5.1.26</mysql.connector.version>
 		<h2database.version>1.3.174</h2database.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
 		<log4j.version>1.2.17</log4j.version>
 		<slf4j.version>1.7.5</slf4j.version>
 		<jsf.version>2.1.7</jsf.version>
@@ -73,6 +74,11 @@
 			<artifactId>h2</artifactId>
 			<version>${h2database.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
 
 		<!--log4j -->
 		<dependency>
@@ -118,38 +124,48 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
 			<properties>
-				<log.severity>DEBUG</log.severity>
-				<application.log.severity>WARN</application.log.severity>
+				<jdbc.className>org.springframework.jdbc.datasource.SimpleDriverDataSource</jdbc.className>
 				<jdbc.driverClassName>org.h2.Driver</jdbc.driverClassName>
-				<jdbc.url>jdbc\:h2\:mem\:test;MODE\=Oracle;DB_CLOSE_DELAY\=-1;DB_CLOSE_ON_EXIT\=FALSE</jdbc.url>
+				<jdbc.url>jdbc:h2:mem:test;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</jdbc.url>
 				<jdbc.username>sa</jdbc.username>
 				<jdbc.password></jdbc.password>
+				<log.severity>DEBUG</log.severity>
+				<application.log.severity>DEBUG</application.log.severity>
 			</properties>
 		</profile>
 
 		<profile>
 			<id>CLOUDUNIT</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
 			<properties>
-				<log.severity>WARN</log.severity>
-				<application.log.severity>WARN</application.log.severity>
+				<jdbc.className>org.apache.commons.dbcp.BasicDataSource</jdbc.className>
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
 				<jdbc.url></jdbc.url>
 				<jdbc.username></jdbc.username>
 				<jdbc.password></jdbc.password>
+				<log.severity>WARN</log.severity>
+				<application.log.severity>WARN</application.log.severity>
 			</properties>
 		</profile>
 	</profiles>
 
 	<build>
-
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
