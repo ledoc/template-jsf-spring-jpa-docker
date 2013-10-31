@@ -12,7 +12,7 @@ import fr.treeptik.model.ToDo;
 import fr.treeptik.service.ToDoService;
 
 @ManagedBean()
-@SessionScoped()
+@SessionScoped
 public class ToDoController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -27,14 +27,14 @@ public class ToDoController implements Serializable {
 	public String save() throws ServiceException {
 		getToDoService().add(toDo);
 		toDo = new ToDo();
-		return "todos";
+		return "list";
 	}
 
 	public String delete() throws ServiceException {
 		toDo = toDos.getRowData();
 		getToDoService().delete(toDo.getId());
 		toDo = new ToDo();
-		return "todos";
+		return "list";
 
 	}
 

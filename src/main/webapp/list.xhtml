@@ -14,7 +14,7 @@
       <script src="../bower_components/bootstrap/assets/js/html5shiv.js"></script>
       <script src="../bower_components/bootstrap/assets/js/respond.min.js"></script>
     <![endif]-->
-<title>Create a ToDo</title>
+<title>ToDo List</title>
 </head>
 <body>
 
@@ -30,36 +30,38 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="bs-docs-section">
 		<div class="col-lg-8">
 			<div class="page-header">
-				<h1 id="tables" style="FONT-SIZE: xx-large;">Recording a ToDo</h1>
+				<h1 id="tables" style="FONT-SIZE: xx-large;">ToDo List</h1>
 				<br /> <br />
 
 				<h:form>
-					<table>
-						<tr>
-							<td>Name :</td>
-							<td><h:inputText styleClass="form-control"
-									value="#{toDoController.toDo.name}" /></td>
-						</tr>
-						<tr>
-							<td>Date :</td>
-							<td><h:inputText styleClass="form-control"
-									value="#{toDoController.toDo.date}">
-									<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Europe/Paris" />
-								</h:inputText></td>
-						</tr>
-						<tr>
-							<td><h:commandButton styleClass="btn btn-primary"
-									value="Submit" action="#{toDoController.save()}" /></td>
-						</tr>
-					</table>
+					<h:dataTable
+						styleClass="table table-striped table-bordered table-hover"
+						value="#{toDoController.toDos}" var="entity">
+
+						<h:column>
+							<f:facet name="header">Id</f:facet>
+								#{entity.id}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Name</f:facet>
+								#{entity.name}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Date</f:facet>
+								#{entity.date}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Delete</f:facet>
+							<h:commandButton styleClass="btn btn-default" value="Delete"
+								action="#{toDoController.delete()}" />
+						</h:column>
+					</h:dataTable>
 				</h:form>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
