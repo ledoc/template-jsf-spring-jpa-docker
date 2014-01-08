@@ -157,7 +157,7 @@
 			<properties>
 				<jdbc.className>org.apache.commons.dbcp.BasicDataSource</jdbc.className>
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-				<jdbc.url>jdbc:mysql://${MODULE1_PORT_80_TCP_ADDR}:3306/test4</jdbc.url>
+				<jdbc.url>jdbc:mysql://${env.MODULE1_PORT_80_TCP_ADDR}:3306/test4</jdbc.url>
 				<jdbc.username>johndoe</jdbc.username>
 				<jdbc.password>u135aor5</jdbc.password>
 				<log.severity>WARN</log.severity>
