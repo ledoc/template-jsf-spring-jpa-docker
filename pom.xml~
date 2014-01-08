@@ -22,7 +22,7 @@
 		<jsf.version>2.1.7</jsf.version>
 		<javaee-web-api.version>7.0</javaee-web-api.version>
 		<jsp-api.version>2.1</jsp-api.version>
-		<address.client>${MODULE1_PORT_80_TCP_ADDR}</address.client>
+		<address.client>${env.MODULE1_PORT_80_TCP_ADDR}</address.client>
 	</properties>
 
 	<dependencies>
