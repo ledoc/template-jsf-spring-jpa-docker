@@ -30,35 +30,35 @@
 			</div>
 		</div>
 	</div>
-				<h1>ToDo List</h1>
-				<br /> <br />
+	<h1>ToDo List</h1>
+	<br />
+	<br />
 
-				<h:form>
-					<h:dataTable
-						styleClass="table table-striped table-bordered table-hover"
-						value="#{toDoController.toDos}" var="entity">
+	<h:form>
+		<h:dataTable
+			styleClass="table table-striped table-bordered table-hover"
+			value="#{toDoController.toDos}" var="entity">
 
-						<h:column>
-							<f:facet name="header">Id</f:facet>
+			<h:column>
+				<f:facet name="header">Id</f:facet>
 								#{entity.id}
 						</h:column>
-						<h:column>
-							<f:facet name="header">Name</f:facet>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
 								#{entity.name}
 						</h:column>
-						<h:column>
-							<f:facet name="header">Date</f:facet>
+			<h:column>
+				<f:facet name="header">Date</f:facet>
 								#{entity.date}
 						</h:column>
-						<h:column>
-							<f:facet name="header">Delete</f:facet>
-							<h:commandButton styleClass="btn btn-default" value="Delete"
-								action="#{toDoController.delete()}" />
-						</h:column>
-					</h:dataTable>
-					<td>
-							<h:commandButton value="Create a ToDo" action="/todos" styleClass="btn btn-primary" />
-							</td>
-				</h:form>
+			<h:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandButton styleClass="btn btn-default" value="Delete"
+					action="#{toDoController.delete()}" />
+			</h:column>
+		</h:dataTable>
+		<td><h:commandButton value="Create a ToDo" action="/todos"
+				styleClass="btn btn-primary" /></td>
+	</h:form>
 </body>
 </html>

@@ -32,32 +32,32 @@
 	</div>
 
 	<h1>Create a Todo</h1>
-				<br /> <br />
+	<br />
+	<br />
 
-				<h:form>
-					<table>
-						<tr>
-							<td>Name :</td>
-							<td><h:inputText styleClass="form-control"
-									value="#{toDoController.toDo.name}" /></td>
-						</tr>
-						<tr>
-							<td>Date :</td>
-							<td><h:inputText styleClass="form-control"
-									value="#{toDoController.toDo.date}">
-									<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Europe/Paris" />
-								</h:inputText></td>
-						</tr>
-					</table>
-					<br />
-					<tr>
-							<td>
-							<h:commandButton styleClass="btn btn-primary" value="Create" action="#{toDoController.save()}" />
-							</td>
-							<td>
-							<h:commandButton value="ToDo List" action="/list" styleClass="btn btn-primary" />
-							</td>
-						</tr>
-				</h:form>
+	<h:form>
+		<table>
+			<tr>
+				<td>Name :</td>
+				<td><h:inputText styleClass="form-control"
+						value="#{toDoController.toDo.name}" /></td>
+			</tr>
+			<tr>
+				<td>Date :</td>
+				<td><h:inputText styleClass="form-control"
+						value="#{toDoController.toDo.date}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="Europe/Paris" />
+					</h:inputText>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<tr>
+			<td><h:commandButton styleClass="btn btn-primary" value="Create"
+					action="#{toDoController.save()}" /></td>
+			<td><h:commandButton value="ToDo List" action="/list"
+					styleClass="btn btn-primary" /></td>
+		</tr>
+	</h:form>
 </body>
 </html>

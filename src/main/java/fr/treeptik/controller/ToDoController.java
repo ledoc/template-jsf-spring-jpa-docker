@@ -23,6 +23,8 @@ public class ToDoController implements Serializable {
 	private ToDo toDo = new ToDo();
 
 	private ListDataModel<ToDo> toDos = new ListDataModel<ToDo>();
+	
+	private Boolean ListEmpty;
 
 	public String save() throws ServiceException {
 		getToDoService().add(toDo);
@@ -61,5 +63,13 @@ public class ToDoController implements Serializable {
 
 	public void setToDoService(ToDoService toDoService) {
 		this.toDoService = toDoService;
+	}
+
+	public Boolean getListEmpty() {
+		return ListEmpty;
+	}
+
+	public void setListEmpty(Boolean listEmpty) {
+		ListEmpty = listEmpty;
 	}
 }

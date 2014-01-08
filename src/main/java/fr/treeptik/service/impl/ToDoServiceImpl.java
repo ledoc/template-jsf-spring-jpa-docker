@@ -1,5 +1,6 @@
 package fr.treeptik.service.impl;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,11 @@ import fr.treeptik.model.ToDo;
 import fr.treeptik.service.ToDoService;
 
 @Service("toDoService")
-public class ToDoServiceImpl implements ToDoService {
+public class ToDoServiceImpl implements ToDoService, Serializable {
 
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Autowired
 	private ToDoDao toDoDao;
 
