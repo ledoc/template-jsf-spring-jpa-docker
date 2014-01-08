@@ -22,6 +22,7 @@
 		<jsf.version>2.1.7</jsf.version>
 		<javaee-web-api.version>7.0</javaee-web-api.version>
 		<jsp-api.version>2.1</jsp-api.version>
+		<address.client>${MODULE1_PORT_80_TCP_ADDR}</address.client>
 	</properties>
 
 	<dependencies>
@@ -157,7 +158,7 @@
 			<properties>
 				<jdbc.className>org.apache.commons.dbcp.BasicDataSource</jdbc.className>
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-				<jdbc.url>jdbc:mysql://${MODULE1_PORT_80_TCP_ADDR}:3306/test4</jdbc.url>
+				<jdbc.url>jdbc:mysql://${address.client}:3306/test4</jdbc.url>
 				<jdbc.username>johndoe</jdbc.username>
 				<jdbc.password>u135aor5</jdbc.password>
 				<log.severity>WARN</log.severity>
