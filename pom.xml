@@ -157,7 +157,7 @@
 			<properties>
 				<jdbc.className>org.apache.commons.dbcp.BasicDataSource</jdbc.className>
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-				<jdbc.url>jdbc:mysql://${env.MAIL}:3306/${env.MAIL}</jdbc.url>
+				<jdbc.url>jdbc:mysql://${env.USER}:3306/test3</jdbc.url>
 				<jdbc.username>johndoe</jdbc.username>
 				<jdbc.password>uohoudpu</jdbc.password>
 				<log.severity>WARN</log.severity>
