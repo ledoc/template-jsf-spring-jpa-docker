@@ -1,4 +1,4 @@
-
+-- phpMyAdmin SQL Dump
 
 CREATE TABLE IF NOT EXISTS `ToDo` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
