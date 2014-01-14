@@ -4,7 +4,7 @@ This is a templ ate for a  web application that uses JSF, Spring and JPA. The sa
 
 <h2>How to use the template</h2>
 
-You need to configure your database access.
+You need to c     onfigure your database access.
 
 To do this you need to change some informations in the pom.xml file, in the profil section:
 
