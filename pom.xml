@@ -159,7 +159,7 @@
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
 				<jdbc.url>jdbc:mysql://${env.CU_MYSQL_HOME}:3306/${env.CU_DB_NAME}</jdbc.url>
 				<jdbc.username>johndoe</jdbc.username>
-				<jdbc.password>2mrjd3nj</jdbc.password>
+				<jdbc.password>nqj3jgep</jdbc.password>
 				<log.severity>WARN</log.severity>
 				<application.log.severity>WARN</application.log.severity>
 			</properties>
