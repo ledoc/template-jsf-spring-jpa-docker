@@ -1,10 +1,5 @@
 --
-CREATE TABLE IF NOT EXISTS `ToDo` (Dump
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`date` datetime DEFAULT NULL,
-`name` varchar(255) DEFAULT NULL,
-PRIMARY KEY (`id`)
-)
+CREATE TABLE IF NOT EXISTS `ToDo` (`id` int(11) NOT NULL AUTO_INCREMENT, `date` datetime DEFAULT NULL, `name` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`))
 ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 INSERT INTO `ToDo` (`id`, `date`, `name`) VALUES
