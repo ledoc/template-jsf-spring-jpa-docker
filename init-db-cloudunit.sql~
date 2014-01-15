@@ -1,6 +1,6 @@
--- phpMyAdmin SQL Dump
 
-CREATE TABLE IF NOT EXISTS `ToDo` (
+
+CREATE TABLE IF NOT EXISTS `ToDo` (Dump
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `date` datetime DEFAULT NULL,
 `name` varchar(255) DEFAULT NULL,
