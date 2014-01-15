@@ -1,4 +1,4 @@
-
+-- coucou
 
 CREATE TABLE IF NOT EXISTS `ToDo` (Dump
 `id` int(11) NOT NULL AUTO_INCREMENT,
