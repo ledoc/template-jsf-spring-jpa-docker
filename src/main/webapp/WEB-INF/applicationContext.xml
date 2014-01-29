@@ -29,7 +29,7 @@
 	<!-- Data Source Declaration -->
 	<bean id="dataSource" class="${jdbc.className}">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
-		<property name="url" value="jdbc:mysql://${CU_MYSQL_HOME}:3306/${CU_DB_NAME}" />
+		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
 	</bean>
