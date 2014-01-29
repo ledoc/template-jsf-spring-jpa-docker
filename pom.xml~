@@ -157,8 +157,8 @@
 			<properties>
 				<jdbc.className>org.apache.commons.dbcp.BasicDataSource</jdbc.className>
 				<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-				<MYSQL_HOME>${CU_MYSQL_HOME}</MYSQL_HOME>
-				<DB_NAME>${CU_DB_NAME}</DB_NAME>
+				<CU_MYSQL_HOME>${CU_MYSQL_HOME}</CU_MYSQL_HOME>
+				<CU_DB_NAME>${CU_DB_NAME}</CU_DB_NAME>
 				<jdbc.username>johndoe</jdbc.username>
 				<jdbc.password>aaa</jdbc.password>
 				<log.severity>WARN</log.severity>
